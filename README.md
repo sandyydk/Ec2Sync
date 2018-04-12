@@ -6,7 +6,7 @@
 - This code deployed in go for AWS Lambda.
 - Environment variables setup as appropriate.
 
-### AWS INSTALLATION IN CCM/TARGET MACHINE
+### AWS INSTALLATION IN TARGET MACHINE
 
 - yum install epel-release –y
 - yum install python-pip –y
@@ -25,7 +25,7 @@
 
 - Upload deployment.zip
 - Set handler as sync
-- Set CCM_IP = {target_machine_ip}
+- Set TARGET_IP = {target_machine_ip}
 - Set PEM_FILE = {target_machine_pem_file}
 - Set USERNAME = {target_machine_username}
 
@@ -33,4 +33,4 @@
 
 - Set S3 bucket of your choice to be the source for the Lambda fujnction. Event type = ObjectCreated
 
-Thanks. For any queries contact - sandyydk@cisco.com
+Thanks. For any queries contact - sandyethadka@gmail.com
