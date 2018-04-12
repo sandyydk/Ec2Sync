@@ -30,9 +30,9 @@ func main() {
 }
 
 func handler(ctx context.Context, s3Event events.S3Event) {
-	CCM_IP, ok := os.LookupEnv("CCM_IP")
+	TARGET_IP, ok := os.LookupEnv("TARGET_IP")
 	if !ok {
-		log.Println("CCM_IP not found")
+		log.Println("TARGET_IP not found")
 		return
 	}
 
@@ -125,7 +125,7 @@ func handler(ctx context.Context, s3Event events.S3Event) {
 			Timeout: time.Second * 15,
 		}
 
-		conn, err := ssh.Dial("tcp", CCM_IP+":22", config)
+		conn, err := ssh.Dial("tcp", TARGET_IP+":22", config)
 		if err != nil {
 			log.Fatalf("Dial failed:%v", err)
 		}
